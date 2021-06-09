@@ -36,7 +36,7 @@ export default function useAgora(client: IAgoraRTCClient | undefined)
     await client.publish([microphoneTrack, cameraTrack]);
     (window as any).client = client;
     (window as any).videoTrack = cameraTrack;
-
+    
     setJoinState(true);
   }
 

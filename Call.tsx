@@ -9,12 +9,16 @@ function Call() {
   const {
     localAudioTrack, localVideoTrack, leave, join, joinState, remoteUsers
   } = useAgora(client);
+  const APP_ID="381fb3753bcf45e9af70353bb8a72c7f"
+  const CHANEL="test_dev"
+  const TEMP_TOKEN="006381fb3753bcf45e9af70353bb8a72c7fIABKWhTO07a8Fekzg7bfepGYXKpuCxPDyKj2le0vZF6vTsItDmgAAAAAEADIUmqkDmDAYAEAAQAOYMBg"
+  
   return (
     <div className='call'>
       <form className='call-form'>
         <div className='button-group'>
-          <button id='join' type='button' className='btn btn-primary btn-sm' disabled={joinState} onClick={() => {join(process.env.APP_ID, process.env.CHANEL, process.env.TEMP_TOKEN)}}>Join</button>
-          <button id='leave' type='button' className='btn btn-primary btn-sm' onClick={() => {leave()}}>Leave</button>
+          <button id='join' type='button' className='btn btn-primary btn-sm' disabled={joinState} onClick={() => {join(APP_ID,CHANEL,TEMP_TOKEN)}}>Join</button>
+          <button id='leave' type='button' className='btn btn-primary btn-sm' disabled={!joinState}  onClick={() => {leave()}}>Leave</button>
         </div>
       </form>
       <div className='player-container'>
